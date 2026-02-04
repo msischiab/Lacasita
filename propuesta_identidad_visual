@@ -1,0 +1,544 @@
+lacasita/propuesta_identidad_visual
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brand Identity V3: La Casita de Silicona</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nordic-navy: #3E5C76;
+            --nordic-clay: #D88C7D;
+            --tech-graphite: #2F3E46;
+            --porcelain: #FDFCFB;
+            --glass-border: rgba(62, 92, 118, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--porcelain);
+            color: var(--tech-graphite);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.03em;
+        }
+
+        .premium-card {
+            background: #ffffff;
+            border: 1px solid var(--glass-border);
+            border-radius: 2rem;
+            box-shadow: 0 12px 40px rgba(47, 62, 70, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(62, 92, 118, 0.12);
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            height: 400px;
+        }
+
+        /* --- LOGO ENGINE (High Precision CSS) --- */
+        .logo-canvas {
+            width: 130px;
+            height: 130px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--porcelain);
+            border-radius: 1.5rem;
+            margin: 0 auto 1rem;
+            position: relative;
+        }
+
+        /* New Logo 4: El Refugio Geométrico */
+        .house-geometric {
+            width: 60px;
+            height: 60px;
+            position: relative;
+        }
+        .house-geometric .roof {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 0;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 30px solid var(--nordic-navy);
+        }
+        .house-geometric .base {
+            position: absolute;
+            bottom: 0;
+            left: 5px;
+            width: 50px;
+            height: 30px;
+            background: var(--nordic-clay);
+            border-radius: 2px;
+        }
+        .house-geometric .door {
+            position: absolute;
+            bottom: 0;
+            left: 22px;
+            width: 16px;
+            height: 20px;
+            background: var(--tech-graphite);
+            border-radius: 4px 4px 0 0;
+        }
+
+        /* Logo 1: Isotipo Estructural */
+        .house-iso-v3 {
+            width: 45px;
+            height: 35px;
+            border: 4px solid var(--nordic-navy);
+            border-top: none;
+            position: relative;
+            border-radius: 0 0 6px 6px;
+        }
+        .house-iso-v3::before {
+            content: '';
+            position: absolute;
+            top: -24px;
+            left: -4px;
+            width: 45px;
+            height: 24px;
+            border-left: 4px solid var(--nordic-navy);
+            border-top: 4px solid var(--nordic-navy);
+            transform: skewY(-35deg) translateY(10px);
+            border-radius: 4px 0 0 0;
+        }
+        .house-iso-v3::after {
+            content: '';
+            position: absolute;
+            top: -24px;
+            right: -4px;
+            width: 45px;
+            height: 24px;
+            border-right: 4px solid var(--nordic-navy);
+            border-top: 4px solid var(--nordic-navy);
+            transform: skewY(35deg) translateY(10px);
+            border-radius: 0 4px 0 0;
+        }
+
+        /* Logo 2: Monograma Fluido */
+        .abstract-s-v3 {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--nordic-navy) 0%, var(--nordic-clay) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 32px;
+            box-shadow: 0 8px 15px rgba(62, 92, 118, 0.2);
+        }
+
+        /* Logo 3: Geometric C */
+        .geo-c-v3 {
+            width: 50px;
+            height: 50px;
+            border: 8px solid var(--tech-graphite);
+            border-radius: 12px;
+            position: relative;
+            clip-path: polygon(0 0, 100% 0, 100% 25%, 35% 25%, 35% 75%, 100% 75%, 100% 100%, 0 100%);
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--nordic-clay);
+            z-index: 100;
+            transition: width 0.1s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="scroll-bar" class="scroll-indicator" style="width: 0%"></div>
+
+    <!-- NARRATIVA ESTRATÉGICA:
+    1. ADN: Refuerzo de la propuesta de valor y "vibe" de marca.
+    2. VISUAL: Los 4 pilares de identidad (incluyendo la nueva casa geométrica).
+    3. COLOR: Inmersión técnica en la paleta Nordic.
+    4. DIGITAL: Ritmo visual para redes y web.
+    5. UNBOXING: Estrategia de tangibilidad.
+    -->
+
+    <nav class="bg-white/90 backdrop-blur-md sticky top-0 z-50 py-6 px-8 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 bg-[#3E5C76] rounded-xl flex items-center justify-center text-white font-bold text-xl">L</div>
+                <div class="leading-none">
+                    <span class="block text-lg font-black tracking-tighter text-[#2F3E46]">LA CASITA</span>
+                    <span class="text-[10px] font-bold tracking-[0.2em] text-[#D88C7D] uppercase">De Silicona</span>
+                </div>
+            </div>
+            <div class="hidden lg:flex gap-10 text-xs font-bold uppercase tracking-widest text-slate-400">
+                <a href="#adn" class="hover:text-[#3E5C76] transition-colors">ADN de Marca</a>
+                <a href="#visual" class="hover:text-[#3E5C76] transition-colors">Visual</a>
+                <a href="#digital" class="hover:text-[#3E5C76] transition-colors">Redes</a>
+                <a href="#unboxing" class="hover:text-[#3E5C76] transition-colors">Experiencia</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white pt-24 pb-32 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-8 text-center relative z-10">
+            <h1 class="text-6xl md:text-8xl font-black text-[#2F3E46] mb-8 leading-[0.9]">
+                Pura <span class="text-[#3E5C76]">Versatilidad.</span><br>
+                Cero <span class="text-[#D88C7D]">Etiquetas.</span>
+            </h1>
+            <p class="max-w-2xl mx-auto text-lg text-slate-500 font-medium leading-relaxed">
+                Una identidad premium-funcional diseñada para el hogar moderno, donde la durabilidad de la tecnología se encuentra con la suavidad del diseño nórdico.
+            </p>
+        </div>
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[300px] bg-gradient-to-t from-[#FDFCFB] to-transparent"></div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-8 pb-32 space-y-40">
+
+        <!-- SECTION 1: ADN PROFUNDO -->
+        <section id="adn" class="scroll-mt-24">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+                <div class="space-y-8">
+                    <span class="text-xs font-black uppercase tracking-[0.3em] text-[#D88C7D]">Pilar 01 — El ADN</span>
+                    <h2 class="text-4xl md:text-5xl font-bold text-[#2F3E46]">Diseño que trasciende el género.</h2>
+                    <p class="text-slate-500 text-lg">
+                        El ADN de "La casita de silicona" se aleja de los estereotipos domésticos frágiles. Nos enfocamos en la **Resiliencia Táctica**: productos que aguantan el calor del horno, el frío de la montaña y el uso rudo del taller.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-6 bg-white border border-slate-100 rounded-3xl">
+                            <div class="text-[#3E5C76] text-3xl mb-3">⚙️</div>
+                            <h4 class="font-bold text-slate-800">Grado Técnico</h4>
+                            <p class="text-xs text-slate-500">Silicona certificada de alta resistencia.</p>
+                        </div>
+                        <div class="p-6 bg-white border border-slate-100 rounded-3xl">
+                            <div class="text-[#D88C7D] text-3xl mb-3">🍃</div>
+                            <h4 class="font-bold text-slate-800">Conciencia</h4>
+                            <p class="text-xs text-slate-500">Adiós a los plásticos de un solo uso.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="premium-card p-10 bg-slate-50">
+                    <h3 class="text-xl font-bold mb-6 text-center">Matriz de Evolución de Marca</h3>
+                    <div class="chart-container">
+                        <canvas id="evolutionRadar"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: GUÍA VISUAL CON NUEVA PROPUESTA -->
+        <section id="visual" class="scroll-mt-24">
+            <div class="text-center max-w-3xl mx-auto mb-20">
+                <span class="text-xs font-black uppercase tracking-[0.3em] text-[#3E5C76]">Pilar 02 — Arquitectura Visual</span>
+                <h2 class="text-4xl font-bold mt-4">Conceptos de Logotipo Refinados</h2>
+                <p class="text-slate-500 mt-4">Hemos creado una narrativa visual para cada tipo de cliente, desde el que busca minimalismo hasta el que prefiere calidez geométrica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Concept 1: Estructural -->
+                <div class="premium-card p-8 text-center group">
+                    <div class="logo-canvas mb-6 group-hover:bg-[#E8F1F8] transition-colors">
+                        <div class="house-iso-v3"></div>
+                    </div>
+                    <h4 class="font-extrabold text-[#3E5C76] mb-2">La Estructura</h4>
+                    <p class="text-xs text-slate-500">Diseño lineal que evoca planos arquitectónicos. Seguridad y soporte.</p>
+                </div>
+
+                <!-- Concept 2: El Refugio Geométrico (NEW) -->
+                <div class="premium-card p-8 text-center group border-[#D88C7D]/30 border-2">
+                    <div class="logo-canvas mb-6 group-hover:bg-[#FCEEEB] transition-colors">
+                        <div class="house-geometric">
+                            <div class="roof"></div>
+                            <div class="base"></div>
+                            <div class="door"></div>
+                        </div>
+                    </div>
+                    <h4 class="font-extrabold text-[#D88C7D] mb-2">Refugio Geométrico</h4>
+                    <p class="text-xs text-slate-500">Formas puras combinadas. La "casita" como un ensamble de precisión técnica.</p>
+                </div>
+
+                <!-- Concept 3: El Fluido -->
+                <div class="premium-card p-8 text-center group">
+                    <div class="logo-canvas mb-6 group-hover:bg-slate-100 transition-colors">
+                        <div class="abstract-s-v3">S</div>
+                    </div>
+                    <h4 class="font-extrabold text-[#2F3E46] mb-2">Monograma Fluido</h4>
+                    <p class="text-xs text-slate-500">Representa la elasticidad del material. Es dinámico y moderno.</p>
+                </div>
+
+                <!-- Concept 4: Minimalista C -->
+                <div class="premium-card p-8 text-center group">
+                    <div class="logo-canvas mb-6 group-hover:bg-slate-100 transition-colors">
+                        <div class="geo-c-v3"></div>
+                    </div>
+                    <h4 class="font-extrabold text-slate-400 mb-2">Abstracción "C"</h4>
+                    <p class="text-xs text-slate-500">Foco en el nombre. Una marca que enmarca el espacio y el orden.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PALETA NORDIC CLAY & TECH -->
+        <section id="color" class="scroll-mt-24">
+            <div class="premium-card bg-[#2F3E46] p-12 text-white">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-4xl font-bold mb-6">Paleta Nordic Clay & Tech</h2>
+                        <p class="text-slate-400 mb-10">
+                            Colores seleccionados para transmitir **confianza profesional** y **suavidad táctica**. Esta combinación neutraliza el género al usar bases oscuras con acentos cálidos pero no infantiles.
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[#3E5C76] border-2 border-white/20"></div>
+                                <div><h5 class="font-bold">Nordic Navy</h5><p class="text-[10px] font-mono text-slate-500">HEX #3E5C76</p></div>
+                            </div>
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-[#D88C7D] border-2 border-white/20"></div>
+                                <div><h5 class="font-bold">Soft Clay</h5><p class="text-[10px] font-mono text-slate-500">HEX #D88C7D</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="aspect-square bg-[#3E5C76] rounded-3xl p-6 flex flex-col justify-end">
+                            <span class="text-xs font-bold opacity-60">Dominante Digital</span>
+                        </div>
+                        <div class="aspect-square bg-[#D88C7D] rounded-3xl p-6 flex flex-col justify-end">
+                            <span class="text-xs font-bold opacity-60">Acento Humano</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: DIGITAL FLOW (INSTAGRAM & WEB) -->
+        <section id="digital" class="scroll-mt-24">
+            <div class="text-center mb-20">
+                <span class="text-xs font-black uppercase tracking-[0.3em] text-[#D88C7D]">Pilar 03 — El Ecosistema</span>
+                <h2 class="text-4xl font-bold mt-4">Visual Rhythm 2025</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <!-- Instagram Column -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-slate-800">Redes: Storytelling 4:5</h3>
+                    <p class="text-slate-500">Nuestro feed en Instagram sigue un patrón de **"Clarity & Use"**. Alternamos fotos de detalle técnico con escenas de uso real.</p>
+                    
+                    <div class="bg-white border-[10px] border-slate-900 rounded-[3rem] p-4 max-w-[320px] mx-auto shadow-2xl overflow-hidden">
+                        <div class="flex items-center gap-2 mb-4 px-2">
+                            <div class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200"></div>
+                            <div class="w-20 h-2 bg-slate-100 rounded"></div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-1">
+                            <div class="aspect-[4/5] bg-slate-100 flex items-center justify-center text-3xl">🧊</div>
+                            <div class="aspect-[4/5] bg-[#3E5C76] flex items-center justify-center p-2 text-center">
+                                <span class="text-[6px] text-white font-bold">PRO TECH SERIES</span>
+                            </div>
+                            <div class="aspect-[4/5] bg-slate-100 flex items-center justify-center text-3xl">🥘</div>
+                            <div class="aspect-[4/5] bg-[#D88C7D] flex items-center justify-center p-2 text-center">
+                                <span class="text-[6px] text-white font-bold">SOFT TACTILE FEEL</span>
+                            </div>
+                            <div class="aspect-[4/5] bg-slate-100 flex items-center justify-center text-3xl">🧺</div>
+                            <div class="aspect-[4/5] bg-[#2F3E46] flex items-center justify-center p-2 text-center">
+                                <span class="text-[6px] text-white font-bold">MINIMAL HOME</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Web Wireframe -->
+                <div class="space-y-8">
+                    <h3 class="text-2xl font-bold text-slate-800">E-commerce Blueprint</h3>
+                    <p class="text-slate-500">Landing page centrada en la **calidad del material**. El usuario puede ver certificaciones y detalles macro antes de comprar.</p>
+                    
+                    <div class="premium-card overflow-hidden bg-slate-50">
+                        <div class="bg-slate-200 h-6 flex items-center px-4 gap-1">
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                            <div class="w-2 h-2 rounded-full bg-white"></div>
+                        </div>
+                        <div class="p-8 space-y-6">
+                            <div class="w-32 h-4 bg-[#3E5C76]/20 rounded"></div>
+                            <div class="h-40 bg-white rounded-3xl border border-dashed border-slate-200 flex items-center justify-center">
+                                <span class="text-slate-300 font-bold uppercase tracking-widest">Main Hero Area</span>
+                            </div>
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="h-20 bg-white rounded-2xl"></div>
+                                <div class="h-20 bg-white rounded-2xl"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: UNBOXING & PACKAGING -->
+        <section id="unboxing" class="scroll-mt-24">
+            <div class="premium-card p-12 bg-white relative overflow-hidden">
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                    <div class="space-y-8">
+                        <span class="text-xs font-black uppercase tracking-[0.3em] text-[#3E5C76]">Pilar 04 — La Entrega</span>
+                        <h2 class="text-4xl font-bold">Unboxing de Alto Impacto</h2>
+                        <p class="text-slate-500">
+                            La experiencia física debe confirmar la promesa digital. Nuestro empaque es minimalista pero robusto.
+                        </p>
+                        <div class="space-y-6">
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-[#E8F1F8] text-[#3E5C76] flex items-center justify-center font-bold">1</div>
+                                <div><h5 class="font-bold">Papel Seda Personalizado</h5><p class="text-xs text-slate-500">Con monogramas en tinta gris tenue.</p></div>
+                            </div>
+                            <div class="flex gap-4">
+                                <div class="w-10 h-10 rounded-full bg-[#FCEEEB] text-[#D88C7D] flex items-center justify-center font-bold">2</div>
+                                <div><h5 class="font-bold">Tarjeta de Cuidado QR</h5><p class="text-xs text-slate-500">Instrucciones de limpieza y tips de reciclaje.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <div class="w-full aspect-square bg-[#3E5C76]/5 rounded-[3rem] flex items-center justify-center border-4 border-dashed border-[#3E5C76]/10">
+                            <div class="text-center group">
+                                <div class="text-9xl mb-4 group-hover:scale-110 transition-transform duration-500">📦</div>
+                                <span class="font-black text-[#3E5C76] tracking-tighter uppercase">Silicona Premium</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: TIPOGRAFÍA & CONCLUSIÓN -->
+        <section class="bg-[#2F3E46] rounded-[3.5rem] p-12 md:p-24 text-white">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+                <div>
+                    <h3 class="text-3xl font-bold mb-8">Tipografía del Sistema</h3>
+                    <div class="space-y-10">
+                        <div>
+                            <span class="text-[10px] text-slate-500 font-mono mb-2 block uppercase tracking-widest">Titulares / Outfit ExtraBold</span>
+                            <h4 class="text-5xl font-extrabold tracking-tighter">Outfit System</h4>
+                            <p class="text-sm text-slate-400 mt-2">Geométrica, moderna y de proporciones fuertes. Elimina la fragilidad visual.</p>
+                        </div>
+                        <div>
+                            <span class="text-[10px] text-slate-500 font-mono mb-2 block uppercase tracking-widest">Cuerpo / Inter Medium</span>
+                            <h4 class="text-3xl font-medium" style="font-family: 'Inter', sans-serif;">Inter Interface</h4>
+                            <p class="text-sm text-slate-400 mt-2">Diseñada para legibilidad perfecta en móviles y apps.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-end">
+                    <h3 class="text-3xl font-bold mb-6">Nota Final de Identidad</h3>
+                    <p class="text-slate-400 leading-relaxed text-lg italic">
+                        "La casita de silicona no es solo una tienda de productos, es una propuesta de longevidad para el hogar moderno. Hemos creado una marca que se siente tan cómoda en una cocina profesional como en un set de fotografía lifestyle."
+                    </p>
+                    <div class="mt-10 flex gap-4">
+                        <div class="w-14 h-14 rounded-full border border-slate-700 flex items-center justify-center font-bold text-[#D88C7D]">S</div>
+                        <div class="w-14 h-14 rounded-full border border-slate-700 flex items-center justify-center font-bold text-[#3E5C76]">V</div>
+                        <div class="w-14 h-14 rounded-full border border-slate-700 flex items-center justify-center font-bold text-white">C</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 text-center border-t border-slate-100">
+        <p class="text-slate-400 text-sm font-bold uppercase tracking-[0.4em]">La Casita de Silicona © 2025</p>
+        <p class="text-slate-300 text-[10px] mt-2">Documento de Identidad Digital V.3.0</p>
+    </footer>
+
+    <script>
+        // Scroll Indicator
+        window.onscroll = function() {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("scroll-bar").style.width = scrolled + "%";
+        };
+
+        // Chart Utilities
+        function wrapLabel(label) {
+            const max = 16;
+            if (label.length <= max) return label;
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if (currentLine.length + 1 + words[i].length <= max) {
+                    currentLine += ' ' + words[i];
+                } else {
+                    lines.push(currentLine);
+                    currentLine = words[i];
+                }
+            }
+            lines.push(currentLine);
+            return lines;
+        }
+
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    return Array.isArray(label) ? label.join(' ') : label;
+                }
+            }
+        };
+
+        // Radar Chart: Evolution
+        const ctxRadar = document.getElementById('evolutionRadar').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: ['Innovación Tech', 'Cercanía Hogar', 'Neutralidad Género', 'Versatilidad Pro', 'Estética Nórdica', 'Durabilidad'].map(wrapLabel),
+                datasets: [{
+                    label: 'Propuesta V3',
+                    data: [95, 90, 98, 92, 95, 98],
+                    backgroundColor: 'rgba(62, 92, 118, 0.2)',
+                    borderColor: '#3E5C76',
+                    pointBackgroundColor: '#3E5C76',
+                    borderWidth: 3
+                }, {
+                    label: 'Promedio Mercado',
+                    data: [45, 95, 30, 40, 50, 60],
+                    backgroundColor: 'rgba(216, 140, 125, 0.2)',
+                    borderColor: '#D88C7D',
+                    pointBackgroundColor: '#D88C7D',
+                    borderWidth: 3,
+                    borderDash: [5, 5]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        beginAtZero: true,
+                        max: 100,
+                        ticks: { display: false },
+                        grid: { color: '#f1f5f9' },
+                        angleLines: { color: '#f1f5f9' }
+                    }
+                },
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    legend: { position: 'bottom', labels: { font: { family: 'Inter', weight: 'bold', size: 10 } } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
