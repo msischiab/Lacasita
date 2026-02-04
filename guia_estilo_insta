@@ -1,0 +1,420 @@
+lacasita/guia_estilo_insta
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía de Estilo Digital 2025: Instagram & Storytelling</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --nordic-navy: #3E5C76;
+            --nordic-clay: #D88C7D;
+            --tech-graphite: #2F3E46;
+            --porcelain: #FDFCFB;
+            --brand-shadow: rgba(62, 92, 118, 0.1);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--porcelain);
+            color: var(--tech-graphite);
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Outfit', sans-serif;
+            letter-spacing: -0.02em;
+        }
+
+        .phone-mockup {
+            background: #000;
+            border-radius: 3rem;
+            padding: 12px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 4px solid #333;
+            max-width: 340px;
+            margin: 0 auto;
+        }
+
+        .instagram-post {
+            aspect-ratio: 4 / 5;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .instagram-post:hover {
+            transform: scale(0.98);
+        }
+
+        .post-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.05);
+            display: flex;
+            align-items: flex-end;
+            padding: 8px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .instagram-post:hover .post-overlay {
+            opacity: 1;
+        }
+
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            height: 300px;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 2rem;
+        }
+
+        .highlight-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            border: 2px solid var(--nordic-clay);
+            padding: 2px;
+            margin-bottom: 4px;
+        }
+
+        .highlight-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: #f1f5f9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+
+    <!-- 
+    ANÁLISIS DE MATERIAL ESTRATÉGICO:
+    1. Formato 4:5: El estándar de oro para retención visual en 2025.
+    2. Ritmo Visual: Estrategia de tablero de ajedrez (Producto vs. Educación).
+    3. Visual Storytelling: Cómo contar la durabilidad a través de la imagen.
+    4. Pilares de Contenido: Distribución porcentual de la comunicación.
+    5. Tipografía y Micro-copy para redes sociales.
+    -->
+
+    <header class="max-w-6xl mx-auto mb-20">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="space-y-2 text-center md:text-left">
+                <span class="text-[10px] font-black tracking-[0.4em] text-[#D88C7D] uppercase">Social Media Protocol</span>
+                <h1 class="text-4xl md:text-5xl font-black text-[#2F3E46]">Guía de Estilo Digital 2025</h1>
+                <p class="text-slate-500 font-medium">Visual Storytelling & Instagram 4:5 para La Casita de Silicona.</p>
+            </div>
+            <div class="flex gap-4">
+                <div class="w-12 h-12 bg-[#3E5C76] rounded-2xl flex items-center justify-center text-white font-bold">IG</div>
+                <div class="w-12 h-12 bg-white border border-slate-200 rounded-2xl flex items-center justify-center text-slate-400">4:5</div>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto space-y-24">
+
+        <!-- SECTION 1: EL FORMATO 4:5 -->
+        <section id="formato" class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-slate-800">1. Formato Vertical 4:5</h2>
+                <p class="text-slate-500 leading-relaxed">
+                    En 2025, el formato cuadrado (1:1) es obsoleto para marcas que buscan **distinción**. El uso del ratio **4:5 (1080 x 1350px)** permite ocupar un 25% más de pantalla en el feed, eliminando distracciones y forzando al usuario a detener el scroll.
+                </p>
+                <div class="bg-[#3E5C76]/5 p-6 rounded-3xl space-y-4 border-l-4 border-[#3E5C76]">
+                    <h4 class="font-bold text-[#3E5C76]">Reglas de Composición:</h4>
+                    <ul class="text-sm text-slate-600 space-y-2">
+                        <li>• **Zona de Seguridad:** Mantener elementos clave en el centro.</li>
+                        <li>• **Luz Natural:** Sombras suaves que resalten la textura de la silicona.</li>
+                        <li>• **Espacio Negativo:** Evitar el "ruido" visual; la silicona respira mejor en fondos sólidos.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="w-full aspect-[4/5] bg-white rounded-[2.5rem] shadow-2xl border border-slate-100 flex items-center justify-center relative overflow-hidden group">
+                    <div class="text-center">
+                        <span class="text-8xl group-hover:scale-110 transition-transform duration-500 block mb-4">🧊</span>
+                        <p class="text-xs font-black uppercase tracking-widest text-slate-400">Ratio 4:5</p>
+                    </div>
+                    <!-- Guides -->
+                    <div class="absolute inset-0 border-[30px] border-transparent group-hover:border-[#3E5C76]/10 transition-all duration-700"></div>
+                </div>
+                <div class="absolute -bottom-6 -right-6 bg-[#D88C7D] text-white p-4 rounded-2xl shadow-xl font-bold text-sm">
+                    +25% Visibilidad
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: RITMO VISUAL (LA GRILLA) -->
+        <section id="ritmo" class="space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">2. Ritmo Visual: El Tablero de Ajedrez</h2>
+                <p class="text-slate-500">Para "La casita de silicona", el feed debe proyectar **Orden y Calidez**. Alternamos fotografía de producto pura con contenido gráfico educativo.</p>
+            </div>
+
+            <div class="phone-mockup">
+                <div class="bg-white h-full w-full rounded-[2.5rem] overflow-hidden flex flex-col">
+                    <div class="p-4 border-b flex justify-between items-center">
+                        <div class="w-16 h-3 bg-slate-100 rounded"></div>
+                        <div class="w-6 h-6 bg-slate-100 rounded-full"></div>
+                    </div>
+                    <div class="p-2 grid grid-cols-3 gap-1">
+                        <!-- Post 1: Producto -->
+                        <div class="instagram-post bg-slate-50">
+                            <span class="text-2xl">🥘</span>
+                        </div>
+                        <!-- Post 2: Gráfico Nordic Navy -->
+                        <div class="instagram-post bg-[#3E5C76]">
+                            <div class="text-center p-1">
+                                <p class="text-[6px] text-white font-bold leading-tight">RESISTENCIA AL CALOR</p>
+                            </div>
+                        </div>
+                        <!-- Post 3: Producto -->
+                        <div class="instagram-post bg-slate-50">
+                            <span class="text-2xl">🍱</span>
+                        </div>
+                        
+                        <!-- Post 4: Gráfico Soft Clay -->
+                        <div class="instagram-post bg-[#D88C7D]">
+                            <div class="text-center p-1">
+                                <p class="text-[6px] text-white font-bold leading-tight uppercase">Textura Soft Touch</p>
+                            </div>
+                        </div>
+                        <!-- Post 5: Producto Contexto -->
+                        <div class="instagram-post bg-slate-200">
+                            <span class="text-2xl">🧤</span>
+                        </div>
+                        <!-- Post 6: Educación Graphite -->
+                        <div class="instagram-post bg-[#2F3E46]">
+                            <div class="text-center p-1">
+                                <p class="text-[6px] text-white font-bold leading-tight">GUÍA DE LAVADO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-panel p-6 border-none shadow-sm text-center">
+                    <h5 class="font-bold text-[#3E5C76] mb-2">Fondo Porcelain</h5>
+                    <p class="text-xs text-slate-500">Para posts de producto puro. Sombras 100% naturales.</p>
+                </div>
+                <div class="glass-panel p-6 border-none shadow-sm text-center">
+                    <h5 class="font-bold text-[#D88C7D] mb-2">Bloque Clay</h5>
+                    <p class="text-xs text-slate-500">Para frases inspiracionales y "lifestyle moments".</p>
+                </div>
+                <div class="glass-panel p-6 border-none shadow-sm text-center">
+                    <h5 class="font-bold text-[#2F3E46] mb-2">Bloque Graphite</h5>
+                    <p class="text-xs text-slate-500">Para especificaciones técnicas y comparativas.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: PILARES DE CONTENIDO -->
+        <section id="pilares" class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div class="chart-container">
+                <canvas id="pillarsChart"></canvas>
+            </div>
+            <div class="space-y-8">
+                <h2 class="text-3xl font-bold text-slate-800">3. Pilares de Contenido</h2>
+                <p class="text-slate-500">Nuestra estrategia de Visual Storytelling no solo muestra qué vendemos, sino **por qué es importante para el usuario**.</p>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#3E5C76] flex items-center justify-center shrink-0 text-white font-bold">40%</div>
+                        <div>
+                            <h4 class="font-bold">Producto Curado (Venta Directa)</h4>
+                            <p class="text-sm text-slate-500">Detalles macro de la silicona, colores disponibles y precio claro.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#D88C7D] flex items-center justify-center shrink-0 text-white font-bold">30%</div>
+                        <div>
+                            <h4 class="font-bold">Silicona Edu (Valor)</h4>
+                            <p class="text-sm text-slate-500">Tips de limpieza, certificaciones de seguridad y comparativas con plástico.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-[#2F3E46] flex items-center justify-center shrink-0 text-white font-bold">30%</div>
+                        <div>
+                            <h4 class="font-bold">Lifestyle Neutral</h4>
+                            <p class="text-sm text-slate-500">Situaciones de uso: cocina, camping, oficina. Sin sesgo de género.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: STORIES & HIGHLIGHTS -->
+        <section id="stories" class="space-y-12">
+            <div class="text-center max-w-2xl mx-auto">
+                <h2 class="text-3xl font-bold text-slate-800 mb-4">4. Stories & Highlights</h2>
+                <p class="text-slate-500">El espacio para la autenticidad y la respuesta inmediata. Un diseño más "raw" pero bajo la misma paleta.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-8">
+                <div class="text-center">
+                    <div class="highlight-circle"><div class="highlight-inner">🏠</div></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Hogar</span>
+                </div>
+                <div class="text-center">
+                    <div class="highlight-circle"><div class="highlight-inner">⛰️</div></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Outdoor</span>
+                </div>
+                <div class="text-center">
+                    <div class="highlight-circle"><div class="highlight-inner">🛡️</div></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Seguridad</span>
+                </div>
+                <div class="text-center">
+                    <div class="highlight-circle"><div class="highlight-inner">💬</div></div>
+                    <span class="text-[10px] font-bold uppercase tracking-widest">Feedback</span>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 rounded-[3rem] shadow-xl border border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div class="space-y-4">
+                    <h4 class="font-bold text-lg text-[#3E5C76]">Story Design Principles</h4>
+                    <p class="text-sm text-slate-500">Uso de la tipografía del sistema (Outfit) mediante stickers de texto limpios. Fondos en degradados suaves de la paleta Nordic.</p>
+                    <div class="flex gap-2">
+                        <div class="h-2 w-full bg-[#3E5C76] rounded-full"></div>
+                        <div class="h-2 w-1/2 bg-[#D88C7D] rounded-full"></div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="font-bold text-lg text-[#D88C7D]">Engagement Tactics</h4>
+                    <p class="text-sm text-slate-500">Uso de encuestas de color: "¿Cuál va mejor en tu cocina: Deep Sea o Soft Clay?". Incentiva el deseo de posesión.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 5: SOCIAL TYPOGRAPHY & TONE -->
+        <section class="bg-[#2F3E46] rounded-[3.5rem] p-12 md:p-20 text-white relative overflow-hidden">
+            <div class="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="text-3xl font-bold mb-8">Tipografía & Tono de Voz</h2>
+                    <div class="space-y-8">
+                        <div>
+                            <span class="text-[10px] text-slate-400 font-mono uppercase tracking-[0.3em] block mb-2">Instagram Headlines</span>
+                            <h4 class="text-4xl font-extrabold font-['Outfit']">Diseño que no se rompe.</h4>
+                            <p class="text-sm text-slate-400 mt-2">Uso de **Outfit Bold** para Reels y placas de texto.</p>
+                        </div>
+                        <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                            <h5 class="font-bold text-[#D88C7D] mb-2">Tono: El Experto Cercano</h5>
+                            <p class="text-sm text-slate-300 italic">"Ni excesivamente técnico, ni puramente emocional. Hablamos de soluciones reales con un lenguaje honesto y sofisticado."</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center space-y-6">
+                    <h3 class="text-2xl font-bold">Checklist de Posteo</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <div class="w-4 h-4 rounded-full border border-[#D88C7D] flex items-center justify-center text-[10px]">✓</div>
+                            Ratio 4:5 verificado
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <div class="w-4 h-4 rounded-full border border-[#D88C7D] flex items-center justify-center text-[10px]">✓</div>
+                            Sombras suaves (No flash directo)
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <div class="w-4 h-4 rounded-full border border-[#D88C7D] flex items-center justify-center text-[10px]">✓</div>
+                            Caption: Beneficio -> Dato -> CTA
+                        </li>
+                        <li class="flex items-center gap-3 text-sm text-slate-300">
+                            <div class="w-4 h-4 rounded-full border border-[#D88C7D] flex items-center justify-center text-[10px]">✓</div>
+                            Etiquetado de productos activo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Accents -->
+            <div class="absolute -bottom-10 -right-10 w-64 h-64 bg-[#3E5C76]/20 rounded-full blur-3xl"></div>
+        </section>
+
+    </main>
+
+    <footer class="py-20 text-center border-t border-slate-100">
+        <p class="text-slate-400 text-xs font-black uppercase tracking-[0.5em]">La Casita de Silicona — Instagram Guide 2025</p>
+    </footer>
+
+    <script>
+        // Data processing for Chart.js (16-char wrapping logic)
+        function wrapLabel(label) {
+            const max = 16;
+            if (label.length <= max) return label;
+            const words = label.split(' ');
+            const res = [];
+            let curr = words[0];
+            for (let i = 1; i < words.length; i++) {
+                if ((curr + ' ' + words[i]).length <= max) {
+                    curr += ' ' + words[i];
+                } else {
+                    res.push(curr);
+                    curr = words[i];
+                }
+            }
+            res.push(curr);
+            return res;
+        }
+
+        const commonTooltip = {
+            callbacks: {
+                title: function(items) {
+                    const l = items[0].chart.data.labels[items[0].dataIndex];
+                    return Array.isArray(l) ? l.join(' ') : l;
+                }
+            }
+        };
+
+        // Pillars Donut Chart
+        const ctxPillars = document.getElementById('pillarsChart').getContext('2d');
+        new Chart(ctxPillars, {
+            type: 'doughnut',
+            data: {
+                labels: ['Producto Curado', 'Silicona Educativa', 'Lifestyle Neutro'].map(wrapLabel),
+                datasets: [{
+                    data: [40, 30, 30],
+                    backgroundColor: ['#3E5C76', '#D88C7D', '#2F3E46'],
+                    borderWidth: 0,
+                    hoverOffset: 15
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    tooltip: commonTooltip,
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            font: { family: 'Inter', weight: 'bold', size: 10 },
+                            usePointStyle: true,
+                            padding: 20
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
