@@ -1,37 +1,218 @@
 <!doctype html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <title>Propuesta identidad visual de la marca</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Casita — Informes y propuestas</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --muted: #9aa4b2;
+      --accent: #f6c85f;
+      --white: #f7f9fb;
+      --glass: rgba(255,255,255,0.04);
+      --radius: 12px;
+      --maxw: 1000px;
+    }
+
+    /* Reset + base */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: linear-gradient(180deg,#071027 0%, #0b1220 100%);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding:32px 16px;
+      display:flex;
+      justify-content:center;
+    }
+
+    .wrap{
+      width:100%;
+      max-width:var(--maxw);
+    }
+
+    header{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      margin-bottom:28px;
+    }
+
+    .brand {
+      width:64px;
+      height:64px;
+      border-radius:12px;
+      background:linear-gradient(135deg,#ffe8a6,#f6c85f);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#102027;
+      font-weight:700;
+      box-shadow:0 6px 18px rgba(0,0,0,0.45);
+      flex:0 0 64px;
+    }
+
+    .brand small{font-size:14px; transform:translateY(2px)}
+
+    h1{margin:0; font-size:20px; font-weight:700}
+    p.lead{margin:6px 0 0; color:var(--muted); font-size:14px}
+
+    .intro{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      margin-bottom:24px;
+      align-items:center;
+    }
+
+    .cta{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .btn{
+      background:var(--accent);
+      color:#071027;
+      padding:10px 14px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 6px 18px rgba(246,200,95,0.12);
+    }
+    .ghost{
+      background:transparent;
+      border:1px solid rgba(255,255,255,0.06);
+      color:var(--white);
+      padding:8px 12px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+    }
+
+    /* Grid cards */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+      gap:14px;
+      margin-bottom:28px;
+    }
+
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:0 6px 18px rgba(3,6,12,0.6);
+      border: 1px solid rgba(255,255,255,0.03);
+      transition:transform .12s ease, box-shadow .12s ease;
+    }
+
+    .card:hover{ transform:translateY(-6px); box-shadow:0 14px 36px rgba(2,6,12,0.7) }
+
+    .card h3{margin:0 0 8px; font-size:16px}
+    .card p{margin:0 0 12px; color:var(--muted); font-size:13px}
+    .meta{ font-size:12px; color:var(--muted); margin-bottom:8px }
+
+    .card a.inline{
+      display:inline-block;
+      text-decoration:none;
+      padding:8px 10px;
+      border-radius:8px;
+      background:rgba(255,255,255,0.03);
+      color:var(--white);
+      font-weight:600;
+      border:1px solid rgba(255,255,255,0.03);
+    }
+
+    /* Footer */
+    footer{
+      margin-top:26px;
+      padding:14px;
+      border-radius:12px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.005));
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      font-size:13px;
+      border:1px solid rgba(255,255,255,0.02);
+    }
+
+    @media (max-width:640px){
+      .intro{flex-direction:column; align-items:flex-start}
+      header{gap:12px}
+    }
+  </style>
 </head>
 
 <body>
-  <h1>Propuesta identidad visual de la marca</h1>
+  <div class="wrap" role="main">
+    <header>
+      <div class="brand" aria-hidden="true">
+        <span style="font-size:22px">LC</span>
+      </div>
+      <div>
+        <h1>La Casita — Propuestas &amp; Guías</h1>
+        <p class="lead">Colección de piezas visuales, guías y propuestas para la identidad digital de la marca.</p>
+      </div>
+      <div style="margin-left:auto" class="cta">
+        <a class="ghost" href="pagina_web.html">Ver Guía Web</a>
+        <a class="btn" href="propuesta_identidad_visual.html">Ver última propuesta</a>
+      </div>
+    </header>
 
-  <ul>
-    <li>
-      <a href="lacasita/propuesta_identidad_integral.html">
-        Propuesta identidad visual V0
-      </a>
-    </li>
+    <section class="intro" aria-labelledby="available">
+      <div>
+        <h2 id="available" style="margin:0 0 8px; font-size:15px">Informes disponibles</h2>
+        <p class="lead" style="margin-bottom:0">Seleccioná la versión que quieras revisar. Cada informe se abre como una página independiente.</p>
+      </div>
+    </section>
 
-    <li>
-      <a href="lacasita/propuesta_identidad_visual.html">
-        Propuesta identidad visual V1
-      </a>
-    </li>
+    <section class="cards" aria-label="listado de informes">
+      <article class="card" role="article">
+        <div class="meta">Versión V1 — Actual</div>
+        <h3>Propuesta identidad visual</h3>
+        <p>La versión más reciente con paleta, tipografía y aplicaciones digitales.</p>
+        <a class="inline" href="propuesta_identidad_visual.html" title="Abrir Propuesta identidad visual V1">Abrir</a>
+      </article>
 
-    <li>
-      <a href="lacasita/pagina_web.html">
-        Guía de Estilo Digital 2026
-      </a>
-    </li>
+      <article class="card" role="article">
+        <div class="meta">Versión V0 — Antecesor</div>
+        <h3>Propuesta identidad integral</h3>
+        <p>Propuesta previa con variantes de logotipo y aplicaciones impresas.</p>
+        <a class="inline" href="propuesta_identidad_integral.html">Abrir</a>
+      </article>
 
-    <li>
-      <a href="lacasita/guia_estilo_insta.html">
-        Arquitectura de Conversión Premium
-      </a>
-    </li>
-  </ul>
+      <article class="card" role="article">
+        <div class="meta">2026 — Guía</div>
+        <h3>Guía de Estilo Digital</h3>
+        <p>Guía con reglas para Instagram, web y materiales digitales.</p>
+        <a class="inline" href="guia_estilo_insta.html">Abrir</a>
+      </article>
+
+      <article class="card" role="article">
+        <div class="meta">Recursos</div>
+        <h3>Página Web — referencias</h3>
+        <p>Resumen de layout, grid y componentes pensados para la casita.</p>
+        <a class="inline" href="pagina_web.html">Abrir</a>
+      </article>
+    </section>
+
+    <footer>
+      <div>Autora: <strong>TU-NOMBRE</strong> — <a href="mailto:tu-email@ejemplo.com" style="color:var(--accent); text-decoration:none">tu-email@ejemplo.com</a></div>
+      <div style="color:var(--muted)">Repositorio: <strong>msischiab / Lacasita</strong></div>
+    </footer>
+  </div>
 </body>
 </html>
+
